@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Row, Col } from 'antd';
+import { Button } from 'antd';
 import ProductCard from '../components/ProductCard';
+import '../pages/Products.css'
 
 const ProductPage = () => {
   const [products, setProducts] = useState([]);
@@ -9,7 +11,8 @@ const ProductPage = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get('http://localhost:8000/api/catalogue/all'); 
+        const response = await axios.get('https://cataloguebackend.onrender.com/api/catalogue/all'); 
+        // const response = await axios.get('http://cataloguebackend.onrender.com/api/catalogue/add'); 
         setProducts(response.data);
       } catch (error) {
         console.error('Error fetching products:', error);
@@ -23,7 +26,10 @@ const ProductPage = () => {
 
   return (
     <div>
-      <h1>Product Catalogue</h1>
+      <header style={{ textAlign: 'center', marginBottom: '20px' }}>
+        <h1>Product Catalogue</h1>
+        <Button className="disclaimer-button">I Agree (Disclaimer)</Button>
+      </header>
       <Row gutter={[16, 16]}>
         {products.map((product, index) => (
           <Col span={8} key={index}>

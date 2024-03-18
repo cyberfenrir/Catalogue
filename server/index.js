@@ -2,7 +2,17 @@ const mongoose = require('mongoose');
 const express = require('express')
 const bodyParser = require('body-parser')
 const cors = require('cors')
-mongoose.connect('mongodb://localhost:27017/catalogue')
+
+
+const dataB = 'mongodb+srv://SyncFocus:SyncFocus167.@catalogue.lxqcvrx.mongodb.net/catalogue?retryWrites=true&w=majority&appName=Catalogue'
+
+mongoose.connect(dataB, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    appName: 'Catalogue'
+  }).then(() => {
+    console.log("Connection Successful");
+  }).catch((err) => console.log("No connection: ", err));
 
 const db = mongoose.connection
 

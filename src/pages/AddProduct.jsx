@@ -14,7 +14,7 @@ const AddProduct = () => {
       message.success('Product added successfully');
       form.resetFields();
     } catch (error) {
-      console.error('Error adding product:', error);
+      console.error('Error adding product:', error.message);
       message.error('Failed to add product');
     }
   };

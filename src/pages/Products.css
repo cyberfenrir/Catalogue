@@ -1,0 +1,25 @@
+.disclaimer-button {
+    background-color: #ffecb3; /* Background color */
+    border-color: #ffc107; /* Border color */
+    color: #333; /* Text color */
+    font-weight: bold; /* Bold text */
+    padding: 8px 16px; /* Padding */
+    border-radius: 4px; /* Rounded corners */
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    margin: auto;
+    margin-top:10px;
+  }
+  
+  .disclaimer-button:hover,
+  .disclaimer-button:focus {
+    background-color: #ffe082; /* Background color on hover/focus */
+    border-color: #ff9800; /* Border color on hover/focus */
+  }
+  
+  .disclaimer-button:active {
+    background-color: #ffd54f; /* Background color on click */
+    border-color: #ff6f00; /* Border color on click */
+  }
+  
